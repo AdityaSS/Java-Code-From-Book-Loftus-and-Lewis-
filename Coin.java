@@ -1,54 +1,30 @@
-package Exercise_7;
+package Exercise_5;
 
-public class Coin implements Lockable {
-	int key;
-	private final int Heads = 0;
-	private final int Tails = 1;
-	private int face;
+import java.util.Random;
 
-	public void setkey(int n) {
-		key = n;
-
-	}
-
-	public void lock(int n) {
-		System.out.println("Object is locked");
-	}
-
-	public void unlock(int n) {
+public class Coin {
+	String Face;
+	int Heads = 1;
+	int Tails = 2;
+	int Output;
+	Random generator = new Random();
+	
+	public Coin(){
 		flip();
-
 	}
-
-	private void flip() {
-		face = (int) (Math.random() * 2);
-		toString();
-
-	}
-
-	public boolean locked(int n) {
-		if (n == key) {
-			System.out.println("True");
-			unlock(n);
-			return true;
-		} else {
-			System.out.println("False");
-			lock(n);
-			return false;
+	
+	public int flip(){             //  can return string or int;
+		Output = generator.nextInt(2) + 1;
+		if(Output == 1){
+			Output = Heads;
+		}else{
+			Output = Tails;
 		}
+		return Output;
 	}
-
-	 public String toString() {
-		String facename = " ";
-		if (face == Heads) {
-			facename = "Heads";
-			System.out.println("Coin face is : " + facename);
-		} else if(face == Tails) {
-			facename = "Tails";
-			System.out.println("Coin face is : " + facename);
-		}
-		return facename;
-		
+	
+	public int getOutput(){
+		return Output;
 	}
-
+	
 }
