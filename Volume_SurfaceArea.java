@@ -1,14 +1,26 @@
-package Exercise_3;
-
-import java.text.DecimalFormat;
+package Exercise_4;
 
 public class Volume_SurfaceArea {
-	public static void main(String args[]) {
-		int radius = 5;
-		DecimalFormat fmt = new DecimalFormat ( "0.####"); 
-		double volume = (4 * Math.PI * Math.pow(radius, 3)) / 3;
-		double Surfacearea = 4 * Math.PI * Math.pow(radius, 2);
-		System.out.println( "Volume : " + fmt.format(volume));
-		System.out.println( "SurfaceArea : " + fmt.format(Surfacearea));
+
+	public static void main(String[] args) {
+		Sphere sphere1,sphere2;
+		
+		sphere1 = new Sphere();
+        sphere2 = new Sphere();
+        
+        
+        System.out.println("Diameter of Sphere1 = " + sphere1.setDiameter() + "\n Diameter of Sphere2 = " + sphere2.setDiameter() );
+        
+       
+        System.out.println("Volume = " + sphere1.Volume(40));
+        
+        System.out.println("Volume = " + sphere2.Volume(60));
+        
+       
+        System.out.println("Surface Area = " + sphere1.SurfaceArea(80));
+       
+        System.out.println("Surface Area = " + sphere2.SurfaceArea(100));
+        
 	}
+
 }
