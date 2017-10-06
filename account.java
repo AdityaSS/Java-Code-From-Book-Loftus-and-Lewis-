@@ -1,28 +1,29 @@
-package Exercise_8;
+package Exercise_7;
 
 public class account {
-
-	customer[] list;
-	int count = 0;
-
-	public account() {
-		list = new customer[30];
+	String acc_name;
+	long acc_num;
+	double acc_balance = 0;
+	
+	public account(String name,long number){
+		acc_name = name;
+		acc_num = number;
 	}
-
-	public void addcustomer(customer c) {
-       
-		list[count] = new customer(c.name, c.accnum, c.balance);
-		count++;
-
+	
+	public double deposit(double amount){
+		acc_balance = acc_balance + amount;
+		return acc_balance;
 	}
-
-	public String toString() {
-		String str = "Account list\n\n";
-		for (int i = 0; i < count; i++) {
-			str += (list[i] + "\n");
-			System.out.println();
-		}
+	
+	public double withdrawl(double amount){
+		acc_balance = acc_balance - amount;
+		return acc_balance;
+	}
+	
+	public String toString(){
+		String str;
+		System.out.println("Name" + "\t" + "AccountNumber" + "\t" + "AccountBalance");
+		str = (acc_name + "\t" + acc_num + "\t" + acc_balance);
 		return str;
 	}
-
 }
