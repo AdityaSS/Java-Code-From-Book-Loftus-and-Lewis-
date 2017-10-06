@@ -2,21 +2,20 @@ package Exercise_6;
 
 import java.util.Scanner;
 
-public class String_Reverse {
+public class char_print {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+		String name;
 		String another = "y";
-		String input;
 		while (another.equalsIgnoreCase("y")) {
 			System.out.println("Enter a word");
-			input = scan.nextLine();
-			char[] in = input.toCharArray();
-			for (int i = in.length - 1; i >= 0; i=i-2) {
-				System.out.print(in[i]);
+			name = scan.nextLine();
+			char[] ch = name.toCharArray();
+			for (int i = 0; i < ch.length; i++) {
+				System.out.println(ch[i]);
 			}
-			System.out.println();
-			System.out.println("Try Again");
+			System.out.println("Start again ? (y/n)");
 			another = scan.nextLine();
 		}
 
